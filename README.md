@@ -1,6 +1,6 @@
 # Heathkit ET-18 Hero-1 Programs
 
-This repository contains Motorola 6800 assembly language programs for the Heathkit Hero-1 Robot.
+Motorola 6800 assembly language programs for the Heathkit Hero-1 Robot.
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ This repository contains Motorola 6800 assembly language programs for the Heathk
 * Run `make <program_name>.s19`.
 * Put the robot into download mode by entering `3` `A` on the robot keypad.
 * Run `upload.py --file=<program_name>.s19`.
-* After programs are uploaded, you may need to enter `A` `D` on the robot keypad followed by the program start address, which is found in the `orig` line of the assembly language program listing.
+* After programs are uploaded, you may need to enter `A` `D` on the robot keypad followed by the program start address, which is found in the `org` line of the assembly language program listing.
 
 Version History
 
