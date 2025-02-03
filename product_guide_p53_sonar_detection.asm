@@ -19,11 +19,11 @@ outbyt  equ     $f7ad           ; Outbyt: Output two hex digits
 	org     $0400
 
 	fcb	iensnr		; Turns on the Robot's sonar and stores its reading in special memory location 0011.
-	fcb	iexit       	; Goes to the Machine Language Mode which is faster than the Robot Language Mode.
+	fcb	iexit		; Goes to the Machine Language Mode which is faster than the Robot Language Mode.
 top:
-	jsr	redis       	; Goes to the "clear the display" routine... located at address F64E.
-	ldaa	sonar         	; Loads the contents into the computer of... special memory address 0011.
-	jsr	outbyt      	; Goes to the "show on display" routine... located at F7AD.
+	jsr	redis		; Goes to the "clear the display" routine... located at address F64E.
+	ldaa	sonar		; Loads the contents into the computer of... special memory address 0011.
+	jsr	outbyt		; Goes to the "show on display" routine... located at F7AD.
 	cmpa	#$20		; Compare the distance reading... to 20.
 	bhi	skip		; If the reading is higher than 20... go ahead to 0412. 
 	swi			; If the reading is less than 20 go to the Robot Language Mode.
@@ -34,6 +34,6 @@ skip:
 	ldx     #$1000		; Loads into the computer... the hexadecimal number 1000.
 loop:
 	dex			; Subtracts 1 from the preceding number.
-	bne	loop        	; If the number is not zero... it goes back to 0416.
+	bne	loop		; If the number is not zero... it goes back to 0416.
 	bra     top		; If the number is equal to zero... it goes to the beginning of the program at 0400.
 
