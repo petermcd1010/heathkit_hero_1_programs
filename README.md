@@ -24,12 +24,6 @@ Motorola 6800 assembly language programs for the [Heathkit Hero-1 Robot](https:/
 * Run `upload.py --file=<program_name>.s19`
 * After programs are uploaded, you may need to enter `A` `D` on the robot keypad followed by the program start address, which is found in the `org` line of the assembly language program listing
 
-Version History
-
-* Jan 13, 2025: Initial release
-
-  * Programs translated from machine language to assembly language from the Heathkit Hero-1 User's Guide
-
 ## License
 
 This project is licensed under the MIT License
