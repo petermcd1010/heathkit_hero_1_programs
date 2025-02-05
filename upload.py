@@ -25,7 +25,7 @@ with open(args.file) as f:
   for line in f:
     print('Sending:', line)
     of.write(line.encode('ascii'))
-    sleep(0.05)  # Sleep 50ms.
+    sleep(0.5)  # Sleep 500ms.
 
 of.close()
 print('Done')
