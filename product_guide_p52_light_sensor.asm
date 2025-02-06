@@ -16,7 +16,7 @@ sensport equ    $c240           ; Sense (eye/ear) port
 redis   equ     $f64e           ; Reset display
 outbyt  equ     $f7ad           ; Outbyt: Output two hex digits
 
-	org 	$0200
+        org 	$0200
 
         fcb     ienlight        ; Turns on the light sensor.
         fcb     iexit           ; Goes to the Machine Language Mode which is faster than operating in the Robot Language Mode.
@@ -34,8 +34,8 @@ wait:
         ldx     #$1000          ; Loads the following number into the index register ... 1000.
 waitloop:
         dex                     ; Subtracts 1 from 1000.
-	bne	waitloop	; If the subtraction does not equal zero... it goes back to 0218. This acts as a delay between light sensor readings.
-	bra	loop		; If the subtraction does equal zero.... the program goes back to the beginning at 0200.
+        bne	waitloop	; If the subtraction does not equal zero... it goes back to 0218. This acts as a delay between light sensor readings.
+        bra	loop		; If the subtraction does equal zero.... the program goes back to the beginning at 0200.
 
         fcb     $A5             ; Phoneme code for P. This is the start of the vocal response for the above program at 0212.
         fcb     $98             ; Phoneme code for L.
